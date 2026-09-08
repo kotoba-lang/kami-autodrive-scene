@@ -43,7 +43,7 @@
   directly on them.
 
   Zero-dep portable CLJC (aside from `scene`, itself zero-dep)."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [scene :as scene]))
 
 ;; ── shipped EDN CONFIG ──────────────────────────────────────────────
@@ -141,7 +141,7 @@
   "Checked class-id -> class-keyword lookup (hyphen/underscore
   tolerant, case-insensitive on the bare name); nil for an unknown id."
   [id]
-  (case (-> id str/lower-case (str/replace "_" "-"))
+  (case (-> id str/lower (str/replace "_" "-"))
     "car" :car
     "ship" :ship
     "drone" :drone
@@ -238,7 +238,7 @@
 (defn limits-for-from-edn
   "Look up one class's limits (hyphen/underscore tolerant) from EDN."
   [src name]
-  (let [id (-> name str/lower-case (str/replace "_" "-"))
+  (let [id (-> name str/lower (str/replace "_" "-"))
         table (limits-from-edn src)]
     (if (error? table)
       table
@@ -369,7 +369,7 @@
   "Look up one class's autopilot config (hyphen/underscore tolerant)
   from EDN."
   [src name]
-  (let [id (-> name str/lower-case (str/replace "_" "-"))
+  (let [id (-> name str/lower (str/replace "_" "-"))
         table (autopilot-from-edn src)]
     (if (error? table)
       table
