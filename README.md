@@ -45,11 +45,11 @@ every class.
 
 ## Contents
 
-- `src/autodrive_scene.cljc` — ~380 lines. Namespace `autodrive-scene`.
+- `src/autodrive_scene.cljk` — ~380 lines. Namespace `autodrive-scene`.
 - `resources/classes.edn` — copy of the original `data/classes.edn` fixture
   (also inlined as `autodrive-scene/classes-edn` for zero-dependency
   portability, matching Rust's `include_str!`).
-- `test/autodrive_scene_test.cljc` — all 11 original Rust `#[test]`s (7 from
+- `test/autodrive_scene_test.cljk` — all 11 original Rust `#[test]`s (7 from
   `src/lib.rs`, 4 from `tests/class_parity.rs`) ported 1:1, plus 1
   namespace-loads smoke test: 12 tests / 396 assertions, 0 failures.
 

@@ -9,7 +9,7 @@
   `kami-autodrive` does not exist yet at restoration time, this port
   compares against the duck-typed `builtin-limits` / `builtin-autopilot`
   oracle defined in this namespace instead (see the namespace
-  docstring in `src/autodrive_scene.cljc`)."
+  docstring in `src/autodrive_scene.cljk`)."
   (:require [clojure.test :refer [deftest is testing]]
             [autodrive-scene :as as]))
 
